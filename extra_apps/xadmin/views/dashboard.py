@@ -279,7 +279,7 @@ class ModelChoiceField(forms.ChoiceField):
                  help_text=None, **kwargs):
         # Call Field instead of ChoiceField __init__() because we don't need
         # ChoiceField.__init__().
-        forms.Field.__init__(self)
+        forms.Field.__init__(self, **kwargs)
         self.widget.choices = self.choices
 
     def __deepcopy__(self, memo):

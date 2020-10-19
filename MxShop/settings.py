@@ -40,18 +40,26 @@ AUTH_USER_MODEL = 'users.UserProfile'
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DjangoUeditor',
     'users',
     'goods',
     'trade',
     'user_operation',
+    'rest_framework',
+    'xadmin',
     'crispy_forms',
-    'xadmin'
+    'DjangoUeditor',
+    'django_filters',
+    'corsheaders',
+    'reversion',
+    'coreschema',
+    'rest_framework.authtoken',
+    'social_django',
 ]
 
 MIDDLEWARE = [
