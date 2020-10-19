@@ -1,23 +1,22 @@
 pillow
 mysqlclient
-djangorestframework-jwt
-djangorestframework
 markdown
-django-filter
-django-crispy-forms
-django-reversion
-django-formtools
 future
 httplib2
 six
 requests
 coreapi
-django-cors-headers
 xlwt  # 处理excel文件
 xlsxwriter # 处理excel文件
 drf-extensions
-django-redis
 pycryptodome
 raven
 django==2.2
-
+django-filter
+django-crispy-forms
+django-reversion
+django-formtools
+djangorestframework-jwt
+djangorestframework
+django-cors-headers
+django-redis
