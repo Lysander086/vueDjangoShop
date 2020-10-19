@@ -1,4 +1,7 @@
 # python.gitignore + frontend.gitignore
+**/.vscode/
+# 去除makemigrations弄出来的文件
+000*_*.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

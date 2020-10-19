@@ -14,8 +14,8 @@ six
 requests
 coreapi
 django-cors-headers
-xlwt
-xlsxwriter
+xlwt  # 处理excel文件
+xlsxwriter # 处理excel文件
 drf-extensions
 django-redis
 pycryptodome
