@@ -92,7 +92,7 @@ DATABASES = {
     # database config
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "mxshop",
+        'NAME': "vueDjangoShop",
         'USER': 'root',
         'PASSWORD': "nroot",
         'HOST': "localhost",
