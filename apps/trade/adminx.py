@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'bobby'
+__author__ = 'Lysander'
 
 import xadmin
 from .models import ShoppingCart, OrderInfo, OrderGoods
