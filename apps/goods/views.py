@@ -1,5 +1,5 @@
 # Create your views here.
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from rest_framework.pagination import PageNumberPagination
 
 from .models import Goods
@@ -16,7 +16,8 @@ class GoodsPagination(PageNumberPagination):
     max_page_size = 100
 
 
-class GoodsListViewSet(viewsets.ModelViewSet):
+# class GoodsListViewSet(viewsets.ModelViewSet):
+class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     List all goods
     """
