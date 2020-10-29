@@ -1,16 +1,9 @@
-from django.shortcuts import render
-
 # Create your views here.
+from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 
 from .models import Goods
 from .serializer import GoodsSerializer
-from django.http import Http404
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-
-from rest_framework import generics
 
 
 class GoodsPagination(PageNumberPagination):
@@ -23,11 +16,10 @@ class GoodsPagination(PageNumberPagination):
     max_page_size = 100
 
 
-class GoodsListView(generics.ListAPIView):
+class GoodsListViewSet(viewsets.ModelViewSet):
     """
     List all goods
     """
-
     queryset = Goods.objects.all()
     serializer_class = GoodsSerializer
     pagination_class = GoodsPagination
