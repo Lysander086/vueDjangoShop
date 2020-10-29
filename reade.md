@@ -14,3 +14,4 @@ django 配置xadmin需要绕过的坑坑
         
 ## 本地superuser
 密码LysanderCode
+

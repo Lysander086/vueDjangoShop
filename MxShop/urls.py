@@ -18,12 +18,20 @@ from django.conf.urls import url, include
 import xadmin
 from MxShop.settings import MEDIA_ROOT
 from django.views.static import serve
-from goods.views_base import GoodsListView
+# from goods.view import GoodsListView
+from goods.views import GoodsListView
+from rest_framework.documentation import include_docs_urls
+from django.urls import path
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),  # 配置媒体文件路径
-
+    # url(r'^api-auth' , include('rest_framework.urls', namespace='rest_framework')),
+    path('api-auth/',include('rest_framework.urls')),
     # 商品列表页
-    url(r'goods/$', GoodsListView.as_view() , name="goods-list")
+    url(r'goods/$', GoodsListView.as_view(), name="goods-list"),
+
+    url(r'docs/', include_docs_urls(title="MxShop doc")),
+    # path('api-auth/', include('rest_framework.urls'))
+
 ]
