@@ -21,6 +21,12 @@ class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     List all goods
     """
-    queryset = Goods.objects.all()
     serializer_class = GoodsSerializer
     pagination_class = GoodsPagination
+
+    def get_queryset(self):
+        query_set = Goods.objects.all()
+        price_min = self.request.query_params.get('price_min', 0)
+        if price_min:
+            query_set = query_set.filter(shop_price__gt=int(price_min))
+        return query_set

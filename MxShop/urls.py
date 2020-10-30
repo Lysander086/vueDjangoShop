@@ -26,16 +26,9 @@ from django.urls import path
 
 router = DefaultRouter()
 
-#  配置goods的url
-# router.register(r'goods', GoodsListViewSet)
 
 # 配置goods的url
-# router.register(r'goods', GoodsListViewSet, base_name='goods')
-
-goods_list = GoodsListViewSet.as_view({
-    'get': 'list',
-})
-
+router.register(r'goods', GoodsListViewSet, base_name='goods')
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
@@ -45,6 +38,5 @@ urlpatterns = [
 
     url(r'docs/', include_docs_urls(title="MxShop doc")),
     # path('api-auth/', include('rest_framework.urls'))
-    # 商品列表页
-    url(r'goods/$', goods_list, name="goods-list"),
+    url(r'^', include(router.urls))
 ]
