@@ -13,7 +13,7 @@ class GoodsPagination(PageNumberPagination):
     """
     good listing page
     """
-    page_size = 5
+    page_size = 12
     page_size_query_param = 'page_size'
     page_query_param = 'p'
     max_page_size = 100

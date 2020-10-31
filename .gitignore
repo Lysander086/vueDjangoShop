@@ -1,4 +1,6 @@
 # python.gitignore + frontend.gitignore
+
+**/node_modules/**
 **/.vscode/
 # 去除makemigrations弄出来的文件
 000*_*.py
