@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'reversion',
     'coreschema',
     'rest_framework.authtoken',
-    'social_django',
+
+    # 'social_django',
 ]
 
 MIDDLEWARE = [
@@ -148,6 +149,9 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    # 'PAGE_SIZE': 5
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+
 }

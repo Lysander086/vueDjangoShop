@@ -30,6 +30,8 @@ router = DefaultRouter()
 # 配置goods的url
 router.register(r'goods', GoodsListViewSet, base_name='goods')
 router.register(r'categorys', CategoryViewSet, base_name='categorys')
+# router.register(r'priceRange', )
+
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
