@@ -13,5 +13,5 @@ django 配置xadmin需要绕过的坑坑
         
         
 ## 本地superuser
-密码LysanderCode
-
+可以执行在manage.py运行时运行命令createsuperuser, 给xadmin创建一个用户
+前端代码在[link](https://github.com/Lysander686/vueDjangoShop-fr), 因为django makemigrations命令遇到node_modules 会卡住, 有没有朋友可以指教一下 怎么让manage.py不检测node_modules 这个文件夹

@@ -59,8 +59,7 @@ INSTALLED_APPS = [
     'reversion',
     'coreschema',
     'rest_framework.authtoken',
-
-    # 'social_django',
+    'social_django',
 ]
 
 MIDDLEWARE = [

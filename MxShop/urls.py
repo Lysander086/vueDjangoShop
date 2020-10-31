@@ -23,9 +23,9 @@ from django.views.static import serve
 from goods.views import GoodsListViewSet, CategoryViewSet
 from rest_framework.documentation import include_docs_urls
 from django.urls import path
+from rest_framework.authtoken import views
 
 router = DefaultRouter()
-
 
 # 配置goods的url
 router.register(r'goods', GoodsListViewSet, base_name='goods')
@@ -36,10 +36,8 @@ router.register(r'categorys', CategoryViewSet, base_name='categorys')
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),  # 配置媒体文件路径
-    # url(r'^api-auth' , include('rest_framework.urls', namespace='rest_framework')),
-    path('api-auth/', include('rest_framework.urls')),
-
     url(r'docs/', include_docs_urls(title="MxShop doc")),
-    # path('api-auth/', include('rest_framework.urls'))
-    url(r'^', include(router.urls))
+    url(r'^', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api-token-auth/', views.obtain_auth_token),
 ]
