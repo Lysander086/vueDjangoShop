@@ -1,12 +1,12 @@
 # Create your views here.
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, mixins
-from rest_framework.pagination import PageNumberPagination
 from rest_framework import filters
+from rest_framework import mixins, viewsets
+from rest_framework.pagination import PageNumberPagination
 
 from .filters import GoodsFilter
-from .models import Goods
-from .serializer import GoodsSerializer
+from .models import Goods, GoodsCategory
+from .serializer import GoodsSerializer, CategorySerializer
 
 
 class GoodsPagination(PageNumberPagination):
@@ -33,3 +33,11 @@ class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     search_fields = ('name', 'goods_brief', 'goods_desc')
     ordering_fields = ('sold_num', 'add_time')
     # filterset_fields = ['shop_price']
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    """
+    list商品分类列表数据
+    """
+    queryset = GoodsCategory.objects.filter(category_type=1)
+    serializer_class = CategorySerializer
