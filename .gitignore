@@ -2,6 +2,7 @@
 
 **/node_modules/**
 **/.vscode/
+**/archivez
 # 去除makemigrations弄出来的文件
 **/migrations/*
 # 000*_*.py
