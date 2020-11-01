@@ -3,3 +3,5 @@
 - 卸载: pip uninstall coreapi MarkupSafe
 - 然后重新安装 coreapi 
 
+## c7-7
+    不集成短信验证功能

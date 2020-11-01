@@ -170,3 +170,10 @@ REST_FRAMEWORK = {
     )
 
 }
+
+
+#手机号验证
+REGEX_MOBILE = "^1[358]\d{9}$|^147\d{8}$|^176\d{8}$"
+
+#云片网APIKEY 根据自己需要配置, 本项目使用mock方法, 不集成发短信
+APIKEY = "2e87d17327d4be01608f7c6da23ecea2"

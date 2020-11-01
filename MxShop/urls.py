@@ -26,11 +26,14 @@ from rest_framework.documentation import include_docs_urls
 from django.urls import path
 from rest_framework.authtoken import views
 
+from users.views import SmsCodeViewset
+
 router = DefaultRouter()
 
 # 配置goods的url
 router.register(r'goods', GoodsListViewSet, base_name='goods')
 router.register(r'categorys', CategoryViewSet, base_name='categorys')
+router.register(r'codes', SmsCodeViewset, base_name='codes')
 # router.register(r'priceRange', )
 
 
