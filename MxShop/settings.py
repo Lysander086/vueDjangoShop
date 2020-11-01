@@ -147,11 +147,26 @@ STATIC_URL = '/static/'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+# 配置自定义的后端验证类
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+)
+
+import datetime
+# jwt登录token有效期限
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),    #也可以设置seconds=20
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',                       #JWT跟前端保持一致，比如“token”这里设置成JWT
+}
+
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication', # 不配置全局token
-    ]
+        # 'rest_framework.authentication.TokenAuthentication', # 不配置全局token
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+
+    )
 
 }

@@ -16,6 +16,7 @@ Including another URLconf
 # from django.contrib import admin
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
+from rest_framework_jwt.views import obtain_jwt_token
 
 import xadmin
 from MxShop.settings import MEDIA_ROOT
@@ -39,5 +40,6 @@ urlpatterns = [
     url(r'docs/', include_docs_urls(title="MxShop doc")),
     url(r'^', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
-    path('api-token-auth/', views.obtain_auth_token),
+    path('api-token-auth/', views.obtain_auth_token),  # drf 自带的token认证模式
+    url(r'^login/', obtain_jwt_token),
 ]
