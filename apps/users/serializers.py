@@ -32,3 +32,6 @@ class SmsSerializer(serializers.Serializer):
             raise serializers.ValidationError("距离上一次发送未超过60s")
 
         return mobile
+
+# class UserSerializer(serializers.ModelSerializer):
+
