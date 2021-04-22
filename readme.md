@@ -1,5 +1,6 @@
 ## 项目信息
-django + vue 前后端分离开发
+- django + vue 前后端分离开发
+- [reference repo](https://github.com/derek-zhang123/MxShop)
 
 根据课程进行代码编写, 希望能把这个项目搞通通
 
